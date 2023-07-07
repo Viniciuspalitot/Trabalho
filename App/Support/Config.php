@@ -2,7 +2,7 @@
 date_default_timezone_set("America/Fortaleza");
 
 // DATABASE
-define("CONF_DB_NAME", "teste");
+define("CONF_DB_NAME", "projetoVinicius");
 define("CONF_DB_HOST", "localhost");
 define("CONF_DB_USER", "root");
 define("CONF_DB_PASS", "");	
@@ -19,4 +19,4 @@ try{
 	exit;
 }
 // PROJECT URLS
-define("BASE_URL", "http://localhost/teste/");
+define("BASE_URL", "http://localhost/trabalho/");

@@ -16,7 +16,9 @@ Class TarefasController extends Controller{
             $tarefas = new Tarefas();
             $titulo = addslashes($post["titulo"]);
             $descricao = addslashes($post["descricao"]);
-            $tarefas->adicionar($titulo, $descricao);
+            $situacao = addslashes($post["situacao"]);
+            $id_categoria = addslashes($post["id_categoria"]);
+            $tarefas->adicionar($titulo, $descricao, $situacao, $id_categoria);
             header("Location: ".BASE_URL."Tarefas");
             exit;
         }
@@ -27,6 +29,16 @@ Class TarefasController extends Controller{
         // pegar a informação da tarefa
         $this->data["tarefa"] = $tarefas->pegarInformacao($id_tarefa);
         $this->loadTemplate("Tarefas/editar", $this->data);
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+
+            $titulo = $_POST['titulo'];
+            $descricao = $_POST['descricao'];
+            $situacao = $_POST['situacao'];
+            $id_categoria = $_POST['id_categoria'];
+
+            $tarefas->editar($id_tarefa, $titulo, $descricao, $situacao, $id_categoria);
+            header('Location: ' . BASE_URL . 'Tarefas');
+        }
     }
 
     public function remover($id_tarefa) {
