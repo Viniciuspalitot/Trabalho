@@ -1,26 +1,22 @@
-<head>
-    <title>Listagem de tarefas</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css">
-</head>
-<h3>Listagem de tarefas</h3>
-<p><a href="<?= BASE_URL; ?>Tarefas/adicionar">Nova Tarefa</a></p>
-<ul>
-    <?php foreach($tarefas as $tarefa): ?>
-        <li><?= $tarefa["id"]; ?> - <?= $tarefa["titulo"]; ?> - <?php echo $tarefa["descricao"]; ?> </li>        
-    <?php endforeach; ?>
-</ul>
+<h3 class="mt-5">Listagem de tarefas</h3>
+<p><a class="btn btn-primary" href="<?= BASE_URL; ?>Tarefas/adicionar">Nova Tarefa</a></p>
 
-<form id="filter-form"> 
+<form class="row g-3" id="filter-form"> 
+<div class="col-auto">
     <label for="situacao-filter">Filtrar por Situação:</label>
-    <select id="situacao-filter" name="situacao-filter">
+</div>
+<div class="col-auto">
+    <select class="form-select" id="situacao-filter" name="situacao-filter">
         <option value="">Todas as Situações</option>
         <option value="Concluída">Concluída</option>
         <option value="Em Progresso">Em Progresso</option>
         <option value="Pendente">Pendente</option>
         <!-- Adicione mais opções conforme necessário -->
     </select>
-
+</div>
+<div class="col-auto">
     <button type="submit">Filtrar</button>
+</div>
 </form>
 
 
@@ -38,7 +34,7 @@
     }
 </style>
 
-<table class="table" border="1">
+<table class="table table-bordered table-hover  table-sm">
     <thead>
         <tr>
             <th>Id</th>
