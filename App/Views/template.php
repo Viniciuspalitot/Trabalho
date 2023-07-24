@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="<?= BASE_URL; ?>Assets/style.css">
-    <title>Teste</title>
+    <title>Alteração do titulo</title>
 </head>
 <body>
     <nav>
